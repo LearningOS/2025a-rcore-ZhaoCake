@@ -29,5 +29,5 @@ pub fn console_putchar(c: usize) {
 use crate::board::QEMUExit;
 /// use sbi call to shutdown the kernel
 pub fn shutdown() -> ! {
-    crate::board::QEMU_EXIT_HANDLE.exit_failure();
+    crate::board::QEMU_EXIT_HANDLE.exit_failure(); // 失败退出才走shutdown
 }

@@ -1,80 +1,79 @@
 # rCore-Tutorial-Code
 
-## Code
+## 代码
 
-- [Soure Code of labs](https://github.com/LearningOS/rCore-Tutorial-Code)
+- [实验源码](https://github.com/LearningOS/rCore-Tutorial-Code)
 
-## Documents
+## 文档
 
-- Concise Manual: [rCore-Tutorial-Guide](https://LearningOS.github.io/rCore-Tutorial-Guide/)
+- 简明手册：[rCore-Tutorial-Guide](https://LearningOS.github.io/rCore-Tutorial-Guide/)
 
-- Detail Book [rCore-Tutorial-Book-v3](https://rcore-os.github.io/rCore-Tutorial-Book-v3/)
+- 详细书籍 [rCore-Tutorial-Book-v3](https://rcore-os.github.io/rCore-Tutorial-Book-v3/)
 
-## OS API docs of rCore Tutorial Code
+## rCore 教程代码的 OS API 文档
 
-- [OS API docs of ch1](https://learningos.github.io/rCore-Tutorial-Code/ch1/os/index.html)
-  AND [OS API docs of ch2](https://learningos.github.io/rCore-Tutorial-Code/ch2/os/index.html)
-- [OS API docs of ch3](https://learningos.github.io/rCore-Tutorial-Code/ch3/os/index.html)
-  AND [OS API docs of ch4](https://learningos.github.io/rCore-Tutorial-Code/ch4/os/index.html)
-- [OS API docs of ch5](https://learningos.github.io/rCore-Tutorial-Code/ch5/os/index.html)
-  AND [OS API docs of ch6](https://learningos.github.io/rCore-Tutorial-Code/ch6/os/index.html)
-- [OS API docs of ch7](https://learningos.github.io/rCore-Tutorial-Code/ch7/os/index.html)
-  AND [OS API docs of ch8](https://learningos.github.io/rCore-Tutorial-Code/ch8/os/index.html)
-- [OS API docs of ch9](https://learningos.github.io/rCore-Tutorial-Code/ch9/os/index.html)
+- [ch1 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch1/os/index.html)
+  以及 [ch2 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch2/os/index.html)
+- [ch3 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch3/os/index.html)
+  以及 [ch4 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch4/os/index.html)
+- [ch5 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch5/os/index.html)
+  以及 [ch6 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch6/os/index.html)
+- [ch7 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch7/os/index.html)
+  以及 [ch8 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch8/os/index.html)
+- [ch9 的 OS API 文档](https://learningos.github.io/rCore-Tutorial-Code/ch9/os/index.html)
 
-## Related Resources
+## 相关资源
 
-- [Learning Resource](https://github.com/LearningOS/rust-based-os-comp2025/blob/main/relatedinfo.md)
+- [学习资源](https://github.com/LearningOS/rust-based-os-comp2025/blob/main/relatedinfo.md)
 
-## Setup
+## 设置
 
 ```bash
 $ git clone https://github.com/LearningOS/2025a-rcore-[YOUR_USER_NAME].git
 $ cd 2025a-rcore-[YOUR_USER_NAME]
 ```
 
-## Build & Run
+## 构建与运行
 
 ```bash
-# setup build&run environment first
+# 首先设置构建和运行环境
 $ git clone https://github.com/LearningOS/rCore-Tutorial-Test.git user
 $ git checkout ch$ID
 $ cd os
-# run OS in ch$ID
+# 在 ch$ID 中运行 OS
 $ make run
 ```
 
-If you want to use docker to build and run, you can use the following command:
+如果您想使用 Docker 来构建和运行，可以使用以下命令：
 ```bash
-# After clone the `rCore-Tutorial-Test` repository to your local machine, you can use the following command to build and run:
+# 将 `rCore-Tutorial-Test` 仓库克隆到本地后，您可以使用以下命令来构建和运行：
 $ make build_docker
 $ make docker
 ```
 
-If you experience network issues when accessing foreign resources such as GitHub in Docker, you can follow the following suggestions according to your stage:
+如果在 Docker 中访问国外资源（如 GitHub）时遇到网络问题，您可以根据您的阶段按照以下建议操作：
 
-- Docker pull:
-  1. use proxy: https://docs.docker.com/reference/cli/docker/image/pull/#proxy-configuration
+- Docker pull：
+  1. 使用代理：https://docs.docker.com/reference/cli/docker/image/pull/#proxy-configuration
 
-  2. use available domestic source (self-search)
+  2. 使用可用的国内源（自行搜索）
 
-- Docker build: use proxy https://docs.docker.com/engine/cli/proxy/#build-with-a-proxy-configuration
+- Docker build：使用代理 https://docs.docker.com/engine/cli/proxy/#build-with-a-proxy-configuration
 
-- Docker run: use proxy option, related operations are similar to `Docker build`, can refer to the relevant materials by yourself
+- Docker run：使用代理选项，相关操作类似于 `Docker build`，可以自行参考相关资料
 
+注意：$ID 范围为 [1-9]
 
-Notice: $ID is from [1-9]
-
-## Grading
+## 评分
 
 ```bash
-# setup build&run environment first
+# 首先设置构建和运行环境
 $ rm -rf ci-user
 $ git clone https://github.com/LearningOS/rCore-Tutorial-Checker.git ci-user
 $ git clone https://github.com/LearningOS/rCore-Tutorial-Test.git ci-user/user
 $ git checkout ch$ID
-# check&grade OS in ch$ID with more tests
+# 使用更多测试检查并评分 ch$ID 中的 OS
 $ cd ci-user && make test CHAPTER=$ID
 ```
 
-Notice: $ID is from [3,4,5,6,8]
+注意：$ID 范围为 [3,4,5,6,8]
