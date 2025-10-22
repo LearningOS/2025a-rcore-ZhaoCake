@@ -20,6 +20,8 @@ fn sbi_call(which: usize, arg0: usize, arg1: usize, arg2: usize) -> usize {
     }
     ret
 }
+// sbi call的工作原理是通过RISC-V架构中的ecall指令实现的。
+// 因为sbi实际上就是处理特权级别的调用请求，而ecall指令正是用于从用户模式切换到特权模式的一种机制。
 
 /// use sbi call to putchar in console (qemu uart handler)
 pub fn console_putchar(c: usize) {
